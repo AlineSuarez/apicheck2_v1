@@ -1,0 +1,795 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #fff; /* Fondo blanco */
+    padding: 40px 20px;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    width: 80%;
+    gap: 30px; /* Reducir la separación entre texto y video */
+}
+
+/* Contenedor del texto */
+.welcome-text h1 {
+    font-size: 3.5rem; /* Texto más grande */
+    font-weight: bold;
+    color: #000;
+    margin: 0;
+    line-height: 1.2;
+    text-align: right; /* Alinear el texto a la derecha */
+    max-width: 400px;
+}
+
+.welcome-text .highlight {
+    color: orange; /* Colorea las letras "AI" */
+    font-style: italic;
+}
+
+/* Contenedor del video */
+.video-container video {
+    width: 750px; /* Video más grande */
+    height: auto;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3); /* Sombra más prominente */
+}
+
+/* Diseño responsivo */
+@media (max-width: 1024px) {
+    .content-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px; /* Mayor separación en pantallas pequeñas */
+    }
+
+    .welcome-text h1 {
+        text-align: center; /* Centrar texto en dispositivos pequeños */
+        font-size: 2.5rem;
+    }
+
+    .video-container video {
+        width: 90%; /* Adaptar video a la pantalla */
+        max-width: 500px;
+    }
+}
+
+
+
+/* Sección Maia */
+.maia-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    background-color: #fff;
+}
+
+.maia-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 90%;
+    gap: 40px;
+}
+
+.maia-text {
+    max-width: 600px;
+    color: #333;
+}
+
+.maia-text h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.maia-text .highlight {
+    color: orange;
+    font-style: italic;
+}
+
+.maia-text p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Contenedor del video estilo smartphone */
+.maia-video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.smartphone-frame {
+    position: relative;
+    width: 300px;
+    height: 600px;
+    border: 15px solid #000;
+    border-radius: 40px;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+    background-color: #333;
+    overflow: hidden;
+}
+
+.smartphone-frame::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 6px;
+    background-color: #000;
+    border-radius: 3px;
+    z-index: 2;
+}
+
+.smartphone-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 25px;
+}
+
+/* Responsivo */
+@media (max-width: 1024px) {
+    .maia-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .maia-text h1 {
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    .smartphone-frame {
+        width: 250px;
+        height: 500px;
+    }
+}
+
+
+/* Hero Section */
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    height: 40vh; /* Ocupa toda  altura de la ventana */
+    overflow: hidden;
+}
+
+.headers-bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Escala el video para cubrir toda el área */
+    z-index: 1;
+}
+
+
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .floating-text {
+        left: 50%; /* Centra horizontalmente */
+        transform: translate(-50%, -50%);
+        max-width: 300px;
+        padding: 15px 20px;
+    }
+
+    .floating-text h1 {
+        font-size: 2rem;
+    }
+}
+
+
+/*Maia Video Hero*/
+
+/* Sección del Hero con video */
+.video-section {
+    position: relative; /* Posiciona la sección para controlar elementos hijos */
+    width: 100%; /* Ocupa todo el ancho de la pantalla */
+    height: 60vh; /* Ocupa toda la altura de la ventana */
+    overflow: hidden; /* Evita que elementos se salgan del contenedor */
+}
+
+.video-container-hero {
+   /* position: absolute;*/
+    width: 100%; /* El video debe ocupar todo el ancho */
+    height: 50%; /* El video debe ocupar toda la altura */
+}
+
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Asegura que el video ocupe todo el ancho de la pantalla */
+    height: 50vh; /* Asegura que el video ocupe toda la altura de la ventana */
+    object-fit: cover; /* Mantiene proporciones widescreen y llena la sección */
+    z-index: 1; /* Permite que el video quede en el fondo */
+}
+/* Contenedor del video */
+.video-container-hero video {
+    height:  50vh;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3); /* Sombra más prominente */
+}
+
+/* Cuadro flotante */
+.floating-text {
+    position: absolute;
+    top: 25%; /* Centra verticalmente el texto */
+    left: 10%; /* Ajusta la posición horizontal del texto */
+    transform: translateY(-50%); /* Ajusta el centrado vertical */
+    z-index: 2; /* Asegura que esté por encima del video */
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente */
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+}
+
+.floating-text h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.floating-text .highlight {
+    color: orange;
+    font-style: italic;
+}
+
+.floating-text p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+
+/* Estilo de la sección Herramientas */
+.herramientas-section {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  
+  .herramientas-section .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .herramientas-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-items: center;
+  }
+  
+  .herramientas-list li {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    text-align: left;
+    max-width: 350px;
+    width: 100%;
+    gap: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .herramientas-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .herramientas-list i {
+    font-size: 2rem;
+    color: #ff9900; /* Color naranja */
+  }
+  
+  .herramientas-list li:hover i {
+    color: #cc7a00; /* Oscurecer color en hover */
+  }
+  
+  .herramientas-list li p {
+    margin: 0;
+    font-size: 1rem;
+    color: #555;
+  }
+  
+/* Sección Herramientas */
+.herramientas-section {
+    position: relative;
+    width: 100%;
+  }
+  
+  /* Imagen Hero */
+  .img-content-hero {
+   
+    width: 100%;
+    height: 32vh; /* 25% del alto de la pantalla */
+    overflow: hidden;
+  }
+  
+  /* Imagen de fondo */
+  .img-content-hero img {
+    width: 100%;
+    height: 30%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  
+  /* Superposición de color */
+  .img-content-hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+  
+  /* Texto dentro de la superposición */
+  .img-content-hero .overlay p {
+    color: #fff; /* Texto blanco */
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0;
+    z-index: 3;
+  }
+  
+  /* Título de la sección */
+  .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  /* Lista de herramientas */
+  .herramientas-list {
+    margin: 2rem auto;
+    padding: 0;
+    list-style: none;
+    max-width: 800px; /* Ancho máximo de la lista */
+  }
+  
+  .herramientas-list li {
+    font-size: 1rem;
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    color: #333;
+  }
+  
+  .herramientas-list li i {
+    margin-right: 0.5rem;
+    color: #ff9800; /* Color de los íconos */
+  }
+  
+
+
+  /* Contenedor del video estilo laptop */
+.maia-laptop-video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+  }
+  
+  .laptop-frame {
+    position: relative;
+    width: 600px; /* Ancho de la laptop */
+    height: 350px; /* Alto de la pantalla */
+    background-color: #000;
+    border: 15px solid #333; /* Borde externo de la laptop */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.4); /* Sombra de la laptop */
+  }
+  
+  .laptop-frame::before {
+    /* Representa la base de la laptop */
+    content: "";
+    position: absolute;
+    bottom: -50px; /* Desplazado hacia abajo para la base */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 20px;
+    background-color: #333;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Sombra de la base */
+  }
+  
+  .laptop-frame::after {
+    /* Representa el bisel inferior de la pantalla */
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 10px;
+    background-color: #222;
+    border-radius: 5px;
+  }
+  
+  .laptop-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que el video ocupe toda la pantalla */
+  }
+  
+/* General */
+.testimonios-section {
+    padding: 3rem 1.5rem;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  
+  .section-description {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 2rem;
+  }
+  
+  /* Carousel Container */
+  .carousel {
+    position: relative;
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .carousel-inner {
+    position: relative;
+  }
+  
+  .testimonio-card {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    visibility: hidden;
+    width: 100%;
+    max-width: 500px;
+    padding: 1.5rem;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.8s ease-in-out, visibility 0.8s;
+  }
+  
+  .testimonio-card.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .testimonio-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    object-fit: cover;
+    border: 3px solid #ddd;
+  }
+  
+  .testimonio-name {
+    font-size: 1.25rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+  }
+  
+  .testimonio-text {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.5;
+  }
+  
+  /* Carousel Controls */
+  .carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #333;
+    cursor: pointer;
+    z-index: 1;
+  }
+  
+  .carousel-control.prev {
+    left: 0.5rem;
+  }
+  
+  .carousel-control.next {
+    right: 0.5rem;
+  }
+  
+
+  /* Valoración (estrellas) */
+.rating {
+    margin: 0.5rem 0;
+    display: inline-block;
+  }
+  
+  .rating .fa-star {
+    font-size: 1.2rem;
+    color: #ccc; /* Estrellas no seleccionadas */
+  }
+  
+  .rating .fa-star.checked {
+    color: #ffc107; /* Estrellas seleccionadas en amarillo */
+  }
+  
+  .btn-success
+  {
+    background-color: #ff9800;
+  }
+
+  .descargas-section {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+
+
+
+
+
+  /* Estilos para el fondo oscuro del modal */
+.modal {
+    display: none; /* Por defecto está oculto */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro semitransparente */
+    overflow: auto; /* Permite desplazamiento si es necesario */
+    padding-top: 60px;
+}
+
+/* Estilos para el contenido del modal */
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo para el header del modal */
+.modal-header {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ff9900; /* Naranja cálido */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilo para los botones de cerrar */
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #ff6600;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    color: #ff3300;
+}
+
+/* Estilo para los campos de entrada */
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus {
+    border-color: #ff9900;
+    outline: none;
+}
+
+/* Estilo para los botones de submit */
+button[type="submit"] {
+    background-color: #ff9900; /* Naranja brillante */
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1em;
+}
+
+button[type="submit"]:hover {
+    background-color: #ff6600; /* Naranja oscuro */
+}
+
+/* Estilo para el fondo de los botones */
+button {
+    border: none;
+}
+
+/* Efecto de animación */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-content {
+    animation: fadeIn 0.5s ease;
+}
+
+
+/* Estilo para el botón que aparece al hacer scroll */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff9900; /* Naranja de panal */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    display: none; /* Inicialmente oculto */
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Efecto de hover sobre el botón */
+#back-to-top:hover {
+    background-color: #ff6600;
+}
+
+
+/* Estilo general */
+.contact-section {
+    padding: 40px 20px;
+    background-color: #FFFAE5; /* Suave color miel */
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #FFAA00; /* Color anaranjado */
+    font-weight: bold;
+}
+
+.contact-section p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #555; /* Texto neutral */
+}
+
+/* Botones de contacto */
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espaciado entre botones */
+    flex-wrap: wrap; /* Acomoda los botones en varias líneas si es necesario */
+}
+
+.contact-links .btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: transform 0.3s, background-color 0.3s;
+    font-weight: bold;
+    color: #fff;
+}
+
+.contact-links .btn i {
+    margin-right: 10px; /* Espaciado entre icono y texto */
+    font-size: 20px;
+}
+
+/* Estilo de botón de WhatsApp */
+.btn-whatsapp {
+    background-color: #25D366; /* Verde de WhatsApp */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-whatsapp:hover {
+    background-color: #1EBE57; /* Verde más oscuro */
+    transform: translateY(-2px);
+}
+
+/* Estilo de botón de Email */
+.btn-email {
+    background-color: #FFAA00; /* Anaranjado */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-email:hover {
+    background-color: #FF8C00; /* Anaranjado más oscuro */
+    transform: translateY(-2px);
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .contact-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .contact-section h2 {
+        font-size: 28px;
+    }
+
+    .contact-section p {
+        font-size: 16px;
+    }
+}

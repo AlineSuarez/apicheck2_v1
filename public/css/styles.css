@@ -1,0 +1,687 @@
+/* Colores principales */
+:root {
+    --primary-color: #FFA500; /* Anaranjado */
+    --secondary-color: #FFD700; /* Amarillo */
+    --dark-color: #FF8C00; /* Anaranjado oscuro */
+    --light-color: #ffffff; /* Crema, para contraste */
+    --text-color: #333333;
+    --red-color:#ff3300;
+    --blue-color:#4400ff;
+    --green-color:#0de764;
+    --greenlight-color:#8eecb3;
+    
+}
+
+/* General styling */
+body {
+    background-color: var(--light-color);
+    color: var(--text-color);
+}
+
+/* Estilos de los botones */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--dark-color);
+    border-color: var(--dark-color);
+}
+
+/* Estilos de las tarjetas */
+.card {
+    border: 1px solid var(--primary-color);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card .card-title {
+    color: var(--primary-color);
+}
+
+.card .card-body {
+    background-color: white;
+    color: var(--text-color);
+}
+
+/* Asistente virtual */
+.virtual-assistant {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Sidebar y navegación */
+.sidebar {
+    background-color: var(--primary-color);
+}
+
+.sidebar .nav-link {
+    color: white;
+}
+
+.sidebar .nav-link:hover {
+    background-color: var(--dark-color);
+    color: white;
+}
+
+
+/* Ajustes para la imagen del usuario */
+.navbar .rounded-circle {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
+/* Para añadir más personalización en el header */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.dropdown-menu-end {
+    right: 0;
+    left: auto;
+}
+
+/* Botón flotante para abrir el asistente virtual */
+.floating-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #f8f9fa;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.floating-btn img {
+    width: 60px;
+    height: 60px;
+}
+
+/* Chat flotante */
+.assistant-chat {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 350px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+    z-index: 1000;
+}
+
+.chat-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.chat-header h5 {
+    margin: 0;
+}
+
+.chat-body {
+    padding: 10px;
+}
+
+.btn-close {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: white;
+}
+
+
+
+/* Fondo general */
+body {
+    background-color: var(--light-color);
+    color: var(--text-color);
+}
+
+/* Textos */
+.text-muted {
+    color: var(--muted-color) !important;
+}
+
+/* Navegación */
+.navbar {
+    background-color: var(--primary-color);
+}
+
+.navbar .nav-link {
+    color: white;
+}
+
+.navbar .nav-link:hover {
+    background-color: var(--dark-color);
+    color: white;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: var(--primary-color);
+}
+
+.sidebar .nav-link {
+    color: white;
+}
+
+.sidebar .nav-link:hover {
+    background-color: var(--dark-color);
+}
+
+/* Tarjetas */
+.card {
+    border: 1px solid var(--primary-color);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card .card-title {
+    color: var(--primary-color);
+}
+
+.card .card-body {
+    background-color: white;
+    color: var(--text-color);
+}
+
+/* Botones */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--dark-color);
+    border-color: var(--dark-color);
+}
+
+/* Fondos */
+.bg-light {
+    background-color: var(--light-color) !important;
+}
+
+.bg-dark {
+    background-color: var(--dark-color) !important;
+    color: white;
+}
+
+.bg-primary {
+    background-color: var(--primary-color) !important;
+    color: white;
+}
+
+.bg-greenligh{
+    background-color: var(--greenlight-color) !important;
+    color: rgb(101, 96, 96);
+}
+/* Bordes */
+.border-primary {
+    border-color: var(--primary-color) !important;
+}
+
+.border-secondary {
+    border-color: var(--secondary-color) !important;
+}
+
+/* Alertas */
+.alert-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+.alert-secondary {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: white;
+}
+
+/* Formularios */
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(255, 165, 0, 0.25);
+}
+
+/* Asistente virtual */
+.virtual-assistant {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Badges */
+.badge-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.badge-secondary {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+/* Tooltips */
+.tooltip-inner {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Tablas */
+.table-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.table-hover tbody tr:hover {
+    background-color: var(--secondary-color);
+}
+
+.list-group-item {
+    background-color: #FFEBCC;
+    border-color: #FF9900;
+}
+
+.btn-primary {
+    background-color: #FFA500;
+    border-color: #FF8C00;
+}
+
+.btn-success {
+    background-color: #FFD700;
+    border-color: #FFC700;
+}
+
+.btn-danger {
+    background-color: #FF6347;
+    border-color: #FF4500;
+}
+
+h4 {
+    color: #FF8C00;
+}
+h1 {
+    color: #FF8C00;
+}
+h2 {
+    color: #FF8C00;
+}
+h4 {
+    color: #FF8C00;
+}
+.task-list {
+    min-height: 200px;
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px dashed #ccc;
+    margin-bottom: 20px;
+}
+
+.task-item {
+    cursor: move;
+    margin-bottom: 10px;
+}
+
+.task-list h4 {
+    text-align: center;
+    color: #ffc107;
+}
+.floating-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.assistant-chat {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    background: white;
+    border-radius: 5px;
+}
+
+.assistant-chat .chat-header {
+    background: #f7f7f7;
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo semitransparente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999; /* Asegúrate de que esté por encima de otros elementos */
+}
+
+#loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.spinner {
+    position: relative;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background-color: #eb8d27; /* color del cuerpo de la abeja */
+    animation: spin 1s linear infinite;
+}
+
+/* Franjas de la abeja */
+.stripe {
+    position: absolute;
+    width: 60px;
+    height: 8px;
+    background-color: #333;
+    left: 0;
+}
+
+.stripe-1 {
+    top: 15px;
+}
+
+.stripe-2 {
+    top: 35px;
+}
+
+/* Alas de la abeja */
+.wing {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #f3f3f3;
+    border-radius: 50%;
+    opacity: 0.6;
+}
+
+.wing-left {
+    top: -10px;
+    left: -10px;
+}
+
+.wing-right {
+    top: -10px;
+    right: -10px;
+}
+
+/* Animación de rotación */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+main-contenload .card {
+    max-width: 18rem; /* Ajusta según sea necesario */
+    margin: 0 10px;
+}
+
+#main-contenload {
+    flex-wrap: nowrap; /* Por defecto: evita que los elementos bajen a otra línea */
+}
+
+@media (max-width: 768px) { /* Ajustes para pantallas móviles */
+    #main-contenload {
+        flex-wrap: wrap; /* Permite que los elementos bajen */
+        justify-content: center; /* Centra los elementos verticalmente */
+    }
+
+    #main-contenload .col-md-3 {
+        width: 100%; /* Los cards ocuparán toda la pantalla en móvil */
+        margin-bottom: 15px; /* Espacio entre los cards */
+    }
+}
+
+.timeline {
+    border-left: 2px solid #333;
+    padding-left: 20px;
+}
+
+.timeline-event {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.timeline-event::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    background: #333;
+    border-radius: 50%;
+}
+
+
+/* Estilo del badge de prioridad en estilo semáforo */
+.badge {
+    padding: 0.4em 0.6em;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 12px;
+}
+
+/* Colores personalizados para cada nivel de prioridad */
+.badge.bg-danger {
+    background-color: #e63946; /* Rojo para urgente */
+    color: white;
+}
+
+.badge.bg-warning {
+    background-color: #f4a261; /* Amarillo para alto */
+    color: white;
+}
+
+.badge.bg-success {
+    background-color: #2a9d8f; /* Verde para bajo */
+    color: white;
+}
+
+.badge.bg-secondary {
+    background-color: #6c757d; /* Gris para sin prioridad */
+    color: white;
+}
+
+/* Estilos para la lista de tareas */
+.task-list .task-item {
+    border-left: 4px solid;
+    padding: 15px;
+    border-radius: 8px;
+    background: #f9f9f9;
+}
+
+/* Ajuste del borde izquierdo del ítem de tarea según la prioridad */
+.task-item.bg-danger { border-color: #e63946; }
+.task-item.bg-warning { border-color: #f4a261; }
+.task-item.bg-success { border-color: #2a9d8f; }
+.task-item.bg-secondary { border-color: #6c757d; }
+
+/* Estilo para la descripción con scroll */
+.task-description {
+    max-height: 80px;
+    overflow-y: auto;
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 5px;
+}
+
+/* Estilo de los botones de acción minimalistas */
+.task-actions .btn-link {
+    color: inherit;
+}
+
+.task-actions .btn-link i {
+    font-size: 1.2rem;
+    color: #007bff; /* Color primario para los íconos de acción */
+}
+
+.task-actions .btn-link.text-danger i {
+    color: #dc3545; /* Color de ícono de eliminar */
+}
+
+.task-actions .btn-link.text-primary i {
+    color: #28a745; /* Color de ícono de completar */
+}
+
+
+/* Estilo general del chat */
+.assistant-chat {
+    position: fixed;
+    bottom: 20px;
+    right: 80px;
+    width: 300px;
+    max-height: 500px;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+
+
+
+
+.nav-pills .nav-link {
+    color: orange; /* Texto anaranjado por defecto */
+    background-color: transparent; /* Fondo transparente */
+    border: 1px solid orange; /* Borde anaranjado opcional */
+}
+
+.nav-pills .nav-link:hover {
+    background-color: orange; /* Fondo anaranjado al pasar el mouse */
+    color: white; /* Texto blanco al pasar el mouse */
+}
+
+.nav-pills .nav-link.active {
+    background-color: orange; /* Fondo anaranjado cuando está activo */
+    color: white; /* Texto blanco cuando está activo */
+}
+
+/*BORDE MAIN-CONTENT*/
+
+.main-content {
+   margin-left:0px;
+}
+
+
+.badge-red {
+    background-color: #f30b0b; /* Rosa intenso */
+    color: #fff; /* Texto blanco */
+}
+.badge-green {
+    background-color: #08b44d; /* Rosa intenso */
+    color: #fff; /* Texto blanco */
+}
+.badge-blue {
+    background-color: #5c6fda; /* Rosa intenso */
+    color: #fff; /* Texto blanco */
+}
+
+
+
+
+
+/* Colores para Prioridad */
+.select2-results__option[data-prioridad="alta"] {
+    background-color: #ffcc00; /* Amarillo */
+    color: rgb(255, 253, 253);
+}
+.select2-results__option[data-prioridad="media"] {
+    background-color: #33ccff; /* Azul */
+    color: rgb(255, 255, 255);
+}
+.select2-results__option[data-prioridad="baja"] {
+    background-color: #b3ffb3; /* Verde claro */
+    color: rgb(245, 245, 245);
+}
+.select2-results__option[data-prioridad="urgente"] {
+    background-color: #ff6666; /* Rojo */
+    color: white;
+}
+
+/* Colores para Estado */
+.select2-results__option[data-estado="Pendiente"] {
+    background-color: #ffff99; /* Amarillo claro */
+    color: rgb(241, 233, 233);
+}
+.select2-results__option[data-estado="En Progreso"] {
+    background-color: #ffcc00; /* Naranja */
+    color: rgb(240, 236, 236);
+}
+.select2-results__option[data-estado="Completada"] {
+    background-color: #66cc66; /* Verde */
+    color: white;
+}
+.select2-results__option[data-estado="Vencida"] {
+    background-color: #ff6666; /* Rojo */
+    color: white;
+}
+
+
+
+
+select.form-select {
+    width: 100%;
+    margin: 5px 0;
+}
+
+.task-item input,
+.task-item select {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.task-item button {
+    width: 100%;
+}
+
+.task-item .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+
+.play-voice-button:disabled {
+    background-color: #ffc107; /* Amarillo */
+    border-color: #ffc107;
+    cursor: not-allowed;
+}
