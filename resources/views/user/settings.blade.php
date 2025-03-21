@@ -62,8 +62,19 @@
                 </select>
             </div>
 
+
             <div class="form-group mt-4">
-                <label for="phone">Número de Registro</label>
+                <label for="address">Dirección</label>
+                <input type="text" class="form-control" id="address" name="address" placeholder="Ingrese su dirección" value='{{ $user->direccion}}'>
+            </div>
+            <div class="form-group mt-4">
+                <label for="email">Correo Electrónico</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese su correo electrónico" required value='{{ $user->email}}'>
+            </div>
+
+
+            <div class="form-group mt-4">
+                <label for="phone">Número de Registro del Apicultor/a</label>
                 <div class="input-group">
                     <span class="input-group-text">#</span>
                     <input type="text" title="Ingrese el número de registro" id="nregistro" name="nregistro" value='{{ $user->numero_registro}}'>

@@ -20,6 +20,7 @@
             <input type="text" name="name" placeholder="Nombre completo" required>
             <input type="email" name="email" placeholder="Correo electrónico" required>
             <input type="password" name="password" placeholder="Contraseña" required>
+            <input type="password" name="password_confirmation" placeholder="Confirmar contraseña" required>
 
             <!-- Enlace para abrir los términos y condiciones -->
             <div class="terms-container">

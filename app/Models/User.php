@@ -35,6 +35,7 @@ class User extends Authenticatable
         'plan',
         'fecha_vencimiento',
         'webpay_status',
+        'direccion', //añadido
     ];
 
     /**

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\ApiarioController;
 use App\Http\Controllers\VisitaController;
 use App\Http\Controllers\DashboardController;
@@ -80,6 +81,11 @@ Route::get('login/google/callback', function () {
 
     return redirect()->intended('home'); // Cambia 'dashboard' por la ruta a la que quieras redirigir al usuario
 });
+
+
+// Ruta de registro
+Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [RegisterController::class, 'register']);
 
 
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
