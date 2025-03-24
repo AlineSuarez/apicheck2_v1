@@ -17,7 +17,7 @@
                     <a class="nav-link" href="#step2" data-bs-toggle="tab"> 2</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#step3" data-bs-toggle="tab"> 3l</a>
+                    <a class="nav-link" href="#step3" data-bs-toggle="tab"> 3</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#step4" data-bs-toggle="tab">4</a>
