@@ -1,0 +1,810 @@
+/* Variables de colores - Paleta mejorada */
+:root {
+    /* Paleta principal - Azul más vibrante */
+    --color-primary-50: #eff6ff;
+    --color-primary-100: #dbeafe;
+    --color-primary-200: #bfdbfe;
+    --color-primary-300: #93c5fd;
+    --color-primary-400: #60a5fa;
+    --color-primary-500: #3b82f6;
+    --color-primary-600: #2563eb;
+    --color-primary-700: #1d4ed8;
+    --color-primary-800: #1e40af;
+    --color-primary-900: #1e3a8a;
+
+    /* Colores de acento */
+    --color-accent-light: #f0f9ff;
+    --color-accent-medium: #e0f2fe;
+    --color-accent-dark: #bae6fd;
+
+    /* Google */
+    --color-google: #ea4335;
+    --color-google-hover: #d33426;
+
+    /* Escala de grises */
+    --color-gray-50: #f9fafb;
+    --color-gray-100: #f3f4f6;
+    --color-gray-200: #e5e7eb;
+    --color-gray-300: #d1d5db;
+    --color-gray-400: #9ca3af;
+    --color-gray-500: #6b7280;
+    --color-gray-600: #4b5563;
+    --color-gray-700: #374151;
+    --color-gray-800: #1f2937;
+    --color-gray-900: #111827;
+
+    /* Gradientes */
+    --gradient-primary: linear-gradient(
+        135deg,
+        var(--color-primary-500),
+        var(--color-primary-700)
+    );
+    --gradient-google: linear-gradient(135deg, #ea4335, #c5221f);
+    --gradient-background: linear-gradient(135deg, #ffffff, #f8fafc);
+
+    /* Sombras */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+        0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+
+    /* Bordes */
+    --border-light: 1.5px solid rgba(255, 255, 255, 0.4);
+    --border-input: 2px solid var(--color-gray-300);
+    --border-radius-lg: 1rem;
+    --border-radius-md: 0.75rem;
+    --border-radius-sm: 0.5rem;
+
+    /* Tipografía */
+    --font-sans: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+}
+
+/* Importar fuente Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* Estilos base para los modales */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.65);
+    z-index: 1000;
+    overflow-y: auto;
+    padding: 20px;
+    box-sizing: border-box;
+    animation: fadeIn 0.3s ease;
+    backdrop-filter: blur(8px);
+    font-family: var(--font-sans);
+}
+
+.modal-content {
+    position: relative;
+    background: white;
+    margin: 2rem auto;
+    padding: 2.75rem;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-xl), 0 0 0 1px rgba(255, 255, 255, 0.1);
+    width: 100%;
+    max-width: 500px;
+    animation: slideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    border: var(--border-light);
+    background-image: radial-gradient(
+            circle at top right,
+            rgba(59, 130, 246, 0.05),
+            transparent 300px
+        ),
+        radial-gradient(
+            circle at bottom left,
+            rgba(59, 130, 246, 0.05),
+            transparent 300px
+        );
+    overflow: hidden;
+    position: relative;
+}
+
+/* Elemento decorativo para el modal */
+.modal-content::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(
+        135deg,
+        var(--color-primary-300),
+        var(--color-primary-500)
+    );
+    border-radius: 50%;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+.modal-content::after {
+    content: "";
+    position: absolute;
+    bottom: -80px;
+    left: -80px;
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(
+        135deg,
+        var(--color-primary-400),
+        var(--color-primary-600)
+    );
+    border-radius: 50%;
+    opacity: 0.08;
+    z-index: -1;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -100% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* Botón de cierre */
+.close-modal {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.5rem;
+    font-size: 1.75rem;
+    font-weight: 300;
+    color: var(--color-gray-600);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--color-gray-100);
+    border: 1px solid var(--color-gray-200);
+    box-shadow: var(--shadow-sm);
+    z-index: 10;
+}
+
+.close-modal:hover {
+    color: var(--color-gray-900);
+    background-color: var(--color-gray-200);
+    transform: rotate(90deg) scale(1.1);
+    box-shadow: var(--shadow-md);
+}
+
+/* Encabezado del modal */
+.modal-header {
+    margin-bottom: 2rem;
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-header h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-gray-900);
+    margin: 0 0 0.5rem 0;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.modal-header p {
+    font-size: 0.9375rem;
+    color: var(--color-gray-600);
+    margin: 0;
+    font-weight: 400;
+}
+
+/* Estilos de formulario */
+form {
+    margin-bottom: 1.25rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-icon-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.input-icon-wrapper:focus-within {
+    transform: translateY(-2px);
+}
+
+.input-icon {
+    position: absolute;
+    left: 1.25rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    color: var(--color-primary-500);
+    pointer-events: none;
+    transition: color 0.2s ease;
+}
+
+/* Ajustar la posición del placeholder más a la izquierda y mejorar el diseño de los inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 1rem 1.25rem 1rem 3.25rem;
+    border: 2px solid var(--color-gray-300);
+    border-radius: var(--border-radius-md);
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    background-color: white;
+    color: var(--color-gray-800);
+    box-shadow: var(--shadow-sm);
+    letter-spacing: 0.01em;
+    font-family: var(--font-sans);
+}
+
+/* Ajustar el placeholder */
+input::placeholder {
+    color: var(--color-gray-500);
+    opacity: 0.9;
+    font-weight: 400;
+    font-family: var(--font-sans);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: var(--color-primary-500);
+    background-color: white;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+}
+
+input[type="text"]:focus + .input-icon,
+input[type="email"]:focus + .input-icon,
+input[type="password"]:focus + .input-icon,
+.input-icon-wrapper:focus-within .input-icon {
+    color: var(--color-primary-600);
+}
+
+/* Asegurar que el contenedor tenga position relative y no interfiera con los eventos */
+.input-icon-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* Asegurar que el input reciba los eventos de clic correctamente */
+.input-icon-wrapper input {
+    position: relative;
+    z-index: 1;
+}
+
+/* Opciones de formulario */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.75rem;
+    font-size: 0.9375rem;
+}
+
+.forgot-password {
+    color: var(--color-primary-700);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-weight: 600;
+    position: relative;
+}
+
+.forgot-password::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background-color: var(--color-primary-600);
+    transition: width 0.3s ease;
+}
+
+.forgot-password:hover {
+    color: var(--color-primary-800);
+}
+
+.forgot-password:hover::after {
+    width: 100%;
+}
+
+/* Botones */
+.primary-button {
+    width: 100%;
+    padding: 0.9375rem 1.5rem;
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius-md);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.01em;
+    font-family: var(--font-sans);
+}
+
+.primary-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.primary-button:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.primary-button:hover::before {
+    transform: translateX(100%);
+}
+
+.primary-button:active {
+    transform: translateY(-1px);
+}
+
+.primary-button svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    transition: transform 0.2s ease;
+}
+
+.primary-button:hover svg {
+    transform: translateX(3px);
+}
+
+.primary-button:disabled {
+    background: var(--color-gray-400);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.primary-button:disabled::before {
+    display: none;
+}
+
+.secondary-button {
+    padding: 0.9375rem 1.5rem;
+    background-color: white;
+    color: var(--color-gray-800);
+    border: 2px solid var(--color-gray-300);
+    border-radius: var(--border-radius-md);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    box-shadow: var(--shadow-sm);
+    font-family: var(--font-sans);
+}
+
+.secondary-button:hover {
+    background-color: var(--color-gray-100);
+    border-color: var(--color-gray-400);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.secondary-button svg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+/* Divisor */
+.modal-divider {
+    display: flex;
+    align-items: center;
+    margin: 1.5rem 0;
+    color: var(--color-gray-600);
+    font-size: 0.9375rem;
+    font-weight: 600;
+}
+
+.modal-divider::before,
+.modal-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        var(--color-gray-300),
+        var(--color-gray-300),
+        transparent
+    );
+}
+
+.modal-divider span {
+    padding: 0 1rem;
+}
+
+/* Botón de Google */
+.social-login {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.75rem;
+}
+
+.google-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0.9375rem 1.5rem;
+    background: var(--gradient-google);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius-md);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.01em;
+    font-family: var(--font-sans);
+}
+
+.google-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.google-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.google-btn:hover::before {
+    transform: translateX(100%);
+}
+
+.google-btn svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 0.75rem;
+}
+
+/* Footer del modal - Ahora centrado debajo del botón */
+.modal-footer {
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--color-gray-600);
+    margin-top: 1.5rem;
+}
+
+.modal-footer a {
+    color: var(--color-primary-600);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+    position: relative;
+}
+
+.modal-footer a::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background-color: var(--color-primary-600);
+    transition: width 0.3s ease;
+}
+
+.modal-footer a:hover {
+    color: var(--color-primary-800);
+}
+
+.modal-footer a:hover::after {
+    width: 100%;
+}
+
+/* Mensaje debajo del botón */
+.button-message {
+    text-align: center;
+    font-size: 0.8125rem;
+    color: var(--color-gray-500);
+    margin-top: 0.75rem;
+    font-weight: 400;
+}
+
+.button-message a {
+    color: var(--color-primary-600);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+    position: relative;
+}
+
+.button-message a::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--color-primary-600);
+    transition: width 0.3s ease;
+}
+
+.button-message a:hover {
+    color: var(--color-primary-800);
+}
+
+.button-message a:hover::after {
+    width: 100%;
+}
+
+/* Checkbox personalizado */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 0;
+    cursor: pointer;
+    font-size: 0.9375rem;
+    user-select: none;
+    color: var(--color-gray-700);
+    font-weight: 500;
+}
+
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: white;
+    border: 2px solid var(--color-gray-400);
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.checkbox-container:hover input ~ .checkmark {
+    border-color: var(--color-primary-500);
+    background-color: var(--color-primary-50);
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background-color: var(--color-primary-600);
+    border-color: var(--color-primary-600);
+    animation: pulse 0.5s;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkbox-container .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.checkbox-text {
+    margin-left: 5px;
+}
+
+.checkbox-text a {
+    color: var(--color-primary-700);
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+}
+
+.checkbox-text a::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--color-primary-600);
+    transition: width 0.3s ease;
+}
+
+.checkbox-text a:hover::after {
+    width: 100%;
+}
+
+/* Modal de términos y condiciones */
+.terms-content {
+    max-width: 800px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.terms-body {
+    flex: 1;
+    margin-bottom: 1.75rem;
+    border: 2px solid var(--color-gray-300);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    background-color: white;
+    box-shadow: var(--shadow-inner);
+}
+
+.terms-body iframe {
+    border: none;
+    background-color: white;
+}
+
+.terms-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+/* Responsividad */
+@media (max-width: 640px) {
+    .modal-content {
+        padding: 2rem 1.5rem;
+        margin: 1rem auto;
+    }
+
+    .modal-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .terms-footer {
+        flex-direction: column;
+    }
+
+    .terms-footer button {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    .form-options {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal {
+        padding: 10px;
+    }
+
+    .modal-content {
+        padding: 1.75rem 1.25rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        padding: 0.875rem 1rem 0.875rem 3rem;
+    }
+
+    .input-icon {
+        left: 1rem;
+        width: 1rem;
+        height: 1rem;
+    }
+
+    .modal-header {
+        margin-bottom: 1.5rem;
+    }
+
+    .primary-button,
+    .secondary-button,
+    .google-btn {
+        padding: 0.875rem 1rem;
+    }
+}
